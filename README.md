@@ -1,27 +1,41 @@
 # BrainQuest Heroes — Adventure Island
 
-A touch-first adventure game for children around ages 5–8, with age 6 as the primary design target.
+A touch-first children's adventure game aimed at ages 5–8, with age 6 as the main design target.
 
-## v10 rebuild
+## v11 gameplay rebuild
 
-This version replaces the old level-button website structure with a real playable Adventure Island hub. The child moves a character around the island and physically reaches activity zones. The game includes 50 mission definitions across 15 themed areas and 16 playable systems including scavenger hunts, mazes, Snake-style arcade play, building, hero battles, racing, memory, platforming, patterns, logic, matching, hidden objects, maths, early reading, science and boss battles.
+This build focuses on a polished playable core rather than pretending that hundreds of features are finished. The child physically explores Adventure Island using an on-screen movement stick, meets friendly NPCs, collects coins, discovers surprise treasure/rainbow events, enters themed places and plays missions.
 
-## Controls
+There are 50 mission definitions across 15 areas: Puzzle Castle, Mystery Forest, Space World, Pirate Island, Dinosaur Valley, Robot City, Underwater Kingdom, Racing World, Builder World, Hero Academy, Candy Land, Snake Arena, Treasure Caves, Brain Lab and Volcano Adventure.
 
-- Tablet/phone: on-screen analogue movement pad plus two large contextual action buttons.
-- Desktop: WASD or arrow keys, `E` for the main action and Space for the second action.
-- Puzzle activities also support direct tapping/clicking on the canvas.
+Playable systems include scavenger exploration, guaranteed-solvable mazes with keys, Snake arcade with power-ups, touch building, animated hero battles, car/boat/rocket/dragon/dino racing variants, memory, platforming with moving platforms and rescues, pattern memory, logic, matching, hidden objects, maths, science, early word building and pattern-based boss battles.
 
-## Safety and privacy
+## Exact core features implemented
 
-There is no open chat, advertising, gambling, real-money purchase system, strangers, camera, microphone or location access. Progress is stored locally in the browser. The parent dashboard is protected by a two-button hold gate.
+- Adventure Island hub with player movement
+- Touch joystick plus contextual action/jump controls; keyboard/mouse fallback
+- Animated custom character, outfits, skin, hair, hats and unlockable pets
+- Stars, coins, gems, crowns, badges and progression
+- Dynamic clouds, birds, NPCs, water effects, animated landmarks, day/night tint and random surprise events
+- Puzzle Castle missions
+- Actual map-based scavenger hunts
+- Snake Arena
+- Platform adventures
+- Builder World with actual block placement/removal
+- Cartoon Hero Academy battles with reacting enemies and powers
+- Racing levels with several vehicle types
+- Separate music and sound-effect controls, with procedural world themes
+- Optional daily challenges without streak pressure
+- Parent dashboard protected by a two-button hold gate
+- Local-only save data; no chat, ads, purchases, camera, microphone or location
 
 ## Architecture
 
-- `index.html` — game shell and accessible overlays
-- `styles.css` — responsive touch-first UI
-- `src/data.js` — zones, 50 missions, unlockable pets/outfits
-- `src/main.js` — engine, Adventure Island, input, rewards, player progress and mini-game systems
-- `sw.js` — offline core cache
+- `src/data.js` — worlds, 50 levels and unlock data
+- `src/progress.js` — saves, rewards and optional daily challenge state
+- `src/audio.js` — procedural music, sound effects and spoken instructions
+- `src/art.js` — player/world/landmark drawing and animation
+- `src/minigames.js` — playable mini-game systems
+- `src/main.js` — engine loop, input, hub, UI and scene management
 
-All game artwork in this build is drawn procedurally with Canvas primitives plus standard Unicode symbols. No third-party character or franchise artwork is copied.
+The artwork is original procedural Canvas art plus standard Unicode symbols. It does not copy Minecraft, Roblox, Snake, superheroes or any third-party franchise characters, maps, artwork or music.
