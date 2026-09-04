@@ -1,9 +1,1 @@
-{
-  "name":"BrainQuest Kids",
-  "short_name":"BrainQuest",
-  "start_url":"./",
-  "display":"standalone",
-  "background_color":"#eef7ff",
-  "theme_color":"#7c3aed",
-  "description":"A private, no-chat puzzle, building and action game for young children."
-}
+{"name":"BrainQuest Heroes — Adventure Island","short_name":"BrainQuest","start_url":"./?v=10","display":"standalone","background_color":"#20356a","theme_color":"#6c4cff","orientation":"any"}
