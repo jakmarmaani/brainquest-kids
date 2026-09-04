@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+<meta name="theme-color" content="#7c3aed" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="stylesheet" href="styles.css" />
+<title>BrainQuest Kids</title>
+</head>
+<body>
+<main id="app" aria-label="BrainQuest Kids game">
+  <header class="topbar">
+    <button id="homeBtn" class="icon-btn" aria-label="Home">🏠</button>
+    <div class="stars" aria-label="Stars"><span>⭐</span><strong id="starCount">0</strong></div>
+    <div class="spacer"></div>
+    <button id="soundBtn" class="icon-btn" aria-label="Sound">🔊</button>
+    <button id="parentBtn" class="icon-btn" aria-label="Parent area">🔒</button>
+  </header>
+
+  <section id="homeScreen" class="screen active">
+    <div class="hero-orbit" aria-hidden="true">
+      <div class="planet p1">🪐</div><div class="planet p2">🌙</div><div class="planet p3">⭐</div>
+      <div class="hero">🚀</div>
+    </div>
+    <button id="playBtn" class="play-btn" aria-label="Play">▶</button>
+    <div class="home-actions">
+      <button id="mapBtn" class="round-action" aria-label="Level map">🗺️</button>
+      <button id="treasureBtn" class="round-action" aria-label="Treasure">🏝️</button>
+    </div>
+  </section>
+
+  <section id="mapScreen" class="screen">
+    <div id="levelMap" class="level-map" aria-label="30 levels"></div>
+  </section>
+
+  <section id="gameScreen" class="screen">
+    <div class="game-hud">
+      <button id="backToMapBtn" class="icon-btn" aria-label="Back">⬅️</button>
+      <div id="levelBadge" class="level-badge">1</div>
+      <div id="lifeDots" class="life-dots" aria-label="Attempts"></div>
+      <button id="restartBtn" class="icon-btn" aria-label="Restart">↻</button>
+    </div>
+    <div id="demoStrip" class="demo-strip" aria-hidden="true"></div>
+    <canvas id="gameCanvas" width="1000" height="650" aria-label="Game play area"></canvas>
+    <div id="tapControls" class="tap-controls" aria-label="Game controls"></div>
+  </section>
+
+  <section id="rewardScreen" class="screen reward-screen">
+    <div id="rewardStars" class="reward-stars"></div>
+    <div id="rewardItem" class="reward-item" aria-hidden="true">🎁</div>
+    <div class="reward-actions">
+      <button id="retryBtn" class="round-action" aria-label="Retry">↻</button>
+      <button id="nextBtn" class="play-btn small" aria-label="Next">▶</button>
+      <button id="rewardMapBtn" class="round-action" aria-label="Map">🗺️</button>
+    </div>
+  </section>
+
+  <section id="treasureScreen" class="screen">
+    <div class="island-wrap">
+      <div class="island">🏝️</div>
+      <div id="collectionGrid" class="collection-grid" aria-label="Collected rewards"></div>
+    </div>
+    <button id="treasureBackBtn" class="round-action bottom" aria-label="Back">⬅️</button>
+  </section>
+
+  <section id="parentGate" class="screen parent-panel">
+    <div class="parent-card">
+      <h1>Parent area</h1>
+      <p>Hold both buttons together for 3 seconds.</p>
+      <div class="gate-buttons">
+        <button id="gateLeft" class="gate-btn" type="button">●</button>
+        <button id="gateRight" class="gate-btn" type="button">●</button>
+      </div>
+      <div class="holdbar"><span id="holdProgress"></span></div>
+      <button id="gateCancel" class="parent-secondary" type="button">Back to game</button>
+    </div>
+  </section>
+
+  <section id="parentScreen" class="screen parent-panel">
+    <div class="parent-card wide">
+      <div class="parent-title-row"><h1>Parent dashboard</h1><button id="parentClose" class="parent-secondary">Close</button></div>
+      <div id="profilePrompt" class="profile-prompt hidden">
+        <h2>Save progress</h2>
+        <p>For privacy, a nickname is recommended instead of a full name.</p>
+        <form id="profileForm">
+          <label>Child nickname<input id="childName" required maxlength="24" autocomplete="off" /></label>
+          <label>Age<input id="childAge" required type="number" min="4" max="12" inputmode="numeric" /></label>
+          <label>Parent email<input id="parentEmail" required type="email" autocomplete="email" /></label>
+          <label class="consent"><input id="consent" type="checkbox" required /> I am the parent/guardian and consent to saving this game progress.</label>
+          <button class="parent-primary" type="submit">Save on this device</button>
+          <p class="privacy-note">No chat, advertising, public profile, location, camera, microphone or contact-list access is used.</p>
+        </form>
+      </div>
+      <div id="dashboardContent">
+        <div class="stat-row"><div><strong id="dashLevel">1</strong><span>Level</span></div><div><strong id="dashStars">0</strong><span>Stars</span></div><div><strong id="dashMinutes">0</strong><span>Minutes</span></div></div>
+        <div id="skillBars" class="skill-bars"></div>
+        <h2>Play settings</h2>
+        <div class="setting-row"><label>Session limit <select id="sessionLimit"><option value="0">Off</option><option value="15">15 min</option><option value="20">20 min</option><option value="30">30 min</option></select></label></div>
+        <div class="setting-row"><label><input id="reducedMotion" type="checkbox" /> Reduced motion</label><label><input id="calmMode" type="checkbox" /> Calm mode</label><label><input id="siblingMode" type="checkbox" /> Sibling turn-taking</label></div>
+        <div class="setting-row"><button id="exportBtn" class="parent-secondary">Export progress</button><button id="resetBtn" class="danger">Reset progress</button></div>
+        <p class="privacy-note">Cloud sync is intentionally disabled in this GitHub-only build. Progress is stored locally on the tablet. A secure parent-controlled cloud account can be added later.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="restScreen" class="screen reward-screen">
+    <div class="rest-icon">🌙</div>
+    <div class="rest-row">🧃 🧘 🌳</div>
+    <button id="restHomeBtn" class="round-action" aria-label="Home">🏠</button>
+  </section>
+</main>
+<script src="game.js"></script>
+<script>
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body>
+</html>
