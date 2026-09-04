@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
 <meta name="theme-color" content="#5b5bd6" />
 <link rel="manifest" href="manifest.webmanifest" />
-<link rel="stylesheet" href="styles.css?v=2" />
+<link rel="stylesheet" href="styles.css?v=5" />
+<link rel="stylesheet" href="mobile-fix.css?v=5" />
 <title>BrainQuest Kids</title>
 </head>
 <body>
@@ -34,7 +35,7 @@
     <div class="game-hud">
       <button id="backToMapBtn" class="icon-btn" aria-label="Back">⬅️</button>
       <div id="levelBadge" class="level-badge">1</div>
-      <div id="progressDots" class="progress-dots"></div>
+      <div id="lifeDots" class="life-dots"></div>
       <button id="restartBtn" class="icon-btn" aria-label="Restart">↻</button>
     </div>
     <div class="play-wrap">
@@ -72,7 +73,7 @@
 
   <section id="restScreen" class="screen reward-screen"><div class="rest-icon">🌙</div><div class="rest-row">🧃 🧘 🌳</div><button id="restHomeBtn" class="round-action">🏠</button></section>
 </main>
-<script src="game.js?v=2"></script>
-<script>if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});</script>
+<script src="game.js?v=5"></script>
+<script>if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=5').catch(()=>{});</script>
 </body>
 </html>
