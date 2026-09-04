@@ -1,6 +1,6 @@
 # BrainQuest Kids
 
-Tablet-first, text-light educational adventure game for children around age 6.
+Tablet-first educational adventure game for children around age 6.
 
 ## Safety and privacy
 - No chat, messaging, adverts, public profiles or online multiplayer.
@@ -10,10 +10,18 @@ Tablet-first, text-light educational adventure game for children around age 6.
 - Use a nickname rather than a child's full legal name.
 
 ## Gameplay
-30 progressively harder levels combining matching, memory, spatial reasoning, building, mazes, patterns and child-friendly robot/action challenges. Puzzle layouts are procedurally randomised on every replay.
+60 progressively harder levels with 12 rotating game styles: matching, sorting, bridge building, memory, mazes, patterns, catching, tower building, visual shadow puzzles, superhero robot battles, scavenger hunts and sequence-memory challenges. Layouts and object positions are randomised so replays change.
 
-## Hosting on GitHub Pages
-Create a public repository named `brainquest-kids`, upload these files to the repository root, then enable GitHub Pages from the `main` branch/root. The expected URL will be:
+## Music and artwork
+- Background music: **Flowerbed Fields [Loop]** by Zane Little Music, CC0, sourced from OpenGameArt.org.
+- Treasure-map artwork: **Treasure map.svg**, CC0/public domain, sourced from Wikimedia Commons / Open Clip Art Library.
+- Castle artwork: **Castle (color).svg**, CC0/public domain, sourced from Wikimedia Commons / Open Clip Art Library.
+- Treasure-island artwork: **Treasure island.svg**, public-domain source, Wikimedia Commons.
+
+The game also uses original canvas graphics and emoji-based visual objects as fallbacks if external artwork is unavailable.
+
+## Hosting
+GitHub Pages URL:
 
 `https://jakmarmaani.github.io/brainquest-kids/`
 
