@@ -1,79 +1,12 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
-<meta name="theme-color" content="#5b5bd6" />
-<link rel="manifest" href="manifest.webmanifest" />
-<link rel="stylesheet" href="styles.css?v=6" />
-<link rel="stylesheet" href="mobile-fix.css?v=6" />
-<title>BrainQuest Kids</title>
-</head>
-<body>
-<main id="app" aria-label="BrainQuest Kids game">
-  <header class="topbar">
-    <button id="homeBtn" class="icon-btn" aria-label="Home">🏠</button>
-    <div class="stars"><span>⭐</span><strong id="starCount">0</strong></div>
-    <div class="spacer"></div>
-    <button id="soundBtn" class="icon-btn" aria-label="Sound">🔊</button>
-    <button id="parentBtn" class="icon-btn" aria-label="Parent area">🔒</button>
-  </header>
-
-  <section id="homeScreen" class="screen active home-screen">
-    <div class="hero-stage" aria-hidden="true">
-      <div class="cloud c1">☁️</div><div class="cloud c2">☁️</div>
-      <div class="hero">🚀</div>
-      <div class="orbit o1">⭐</div><div class="orbit o2">🪐</div><div class="orbit o3">🌙</div>
-    </div>
-    <button id="playBtn" class="play-btn" aria-label="Play">▶</button>
-    <div class="home-actions"><button id="mapBtn" class="round-action" aria-label="Levels">🗺️</button><button id="treasureBtn" class="round-action" aria-label="Treasure">🏝️</button></div>
-  </section>
-
-  <section id="mapScreen" class="screen map-screen"><div id="levelMap" class="level-map"></div></section>
-
-  <section id="gameScreen" class="screen game-screen">
-    <div class="game-hud">
-      <button id="backToMapBtn" class="icon-btn" aria-label="Back">⬅️</button>
-      <div id="levelBadge" class="level-badge">1</div>
-      <div id="lifeDots" class="life-dots"></div>
-      <button id="restartBtn" class="icon-btn" aria-label="Restart">↻</button>
-    </div>
-    <div class="play-wrap">
-      <canvas id="gameCanvas" width="1000" height="650" aria-label="Game play area"></canvas>
-      <div id="tutorial" class="tutorial hidden" aria-hidden="true">
-        <div id="tutorialScene" class="tutorial-scene"></div>
-        <div class="guide-hand">👆</div>
-      </div>
-      <div id="feedback" class="feedback" aria-hidden="true"></div>
-    </div>
-    <div id="tapControls" class="tap-controls"></div>
-  </section>
-
-  <section id="rewardScreen" class="screen reward-screen">
-    <div id="rewardStars" class="reward-stars"></div>
-    <div id="rewardItem" class="reward-item">🎁</div>
-    <div class="reward-actions"><button id="retryBtn" class="round-action" aria-label="Retry">↻</button><button id="nextBtn" class="play-btn small" aria-label="Next">▶</button><button id="rewardMapBtn" class="round-action" aria-label="Map">🗺️</button></div>
-  </section>
-
-  <section id="treasureScreen" class="screen treasure-screen">
-    <div class="island">🏝️</div><div id="collectionGrid" class="collection-grid"></div>
-    <button id="treasureBackBtn" class="round-action" aria-label="Back">⬅️</button>
-  </section>
-
-  <section id="parentGate" class="screen parent-panel">
-    <div class="parent-card"><h1>Parent area</h1><p>Hold both buttons together for 3 seconds.</p><div class="gate-buttons"><button id="gateLeft" class="gate-btn">●</button><button id="gateRight" class="gate-btn">●</button></div><div class="holdbar"><span id="holdProgress"></span></div><button id="gateCancel" class="parent-secondary">Back to game</button></div>
-  </section>
-
-  <section id="parentScreen" class="screen parent-panel">
-    <div class="parent-card wide"><div class="parent-title-row"><h1>Parent dashboard</h1><button id="parentClose" class="parent-secondary">Close</button></div>
-      <div id="profilePrompt" class="profile-prompt hidden"><h2>Save progress</h2><p>Use a nickname rather than a full name.</p><form id="profileForm"><label>Child nickname<input id="childName" required maxlength="24" autocomplete="off"></label><label>Age<input id="childAge" required type="number" min="4" max="12"></label><label>Parent email<input id="parentEmail" required type="email" autocomplete="email"></label><label class="consent"><input id="consent" type="checkbox" required> I am the parent/guardian and consent to saving this progress on this device.</label><button class="parent-primary">Save on this device</button></form></div>
-      <div id="dashboardContent"><div class="stat-row"><div><strong id="dashLevel">1</strong><span>Level</span></div><div><strong id="dashStars">0</strong><span>Stars</span></div><div><strong id="dashMinutes">0</strong><span>Minutes</span></div></div><div id="skillBars" class="skill-bars"></div><h2>Play settings</h2><div class="setting-row"><label>Session limit <select id="sessionLimit"><option value="0">Off</option><option value="15">15 min</option><option value="20">20 min</option><option value="30">30 min</option></select></label></div><div class="setting-row"><label><input id="reducedMotion" type="checkbox"> Reduced motion</label><label><input id="calmMode" type="checkbox"> Calm mode</label></div><div class="setting-row"><button id="resetBtn" class="danger">Reset progress</button></div><p class="privacy-note">Progress and parent details stay on this device. No chat, advertising, public profile, camera, microphone, contacts or location access.</p></div>
-    </div>
-  </section>
-
-  <section id="restScreen" class="screen reward-screen"><div class="rest-icon">🌙</div><div class="rest-row">🧃 🧘 🌳</div><button id="restHomeBtn" class="round-action">🏠</button></section>
-</main>
-<script src="game.js?v=6"></script>
-<script>if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=6').catch(()=>{});</script>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#5527c9"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css?v=7"><title>BrainQuest Heroes</title></head><body><main id="app">
+<header class="topbar"><button id="homeBtn" class="icon-btn">🏠</button><div class="stars">⭐ <strong id="starCount">0</strong></div><div class="spacer"></div><button id="soundBtn" class="icon-btn">🔊</button><button id="parentBtn" class="icon-btn">🔒</button></header>
+<section id="homeScreen" class="screen active home-screen"><div class="brand">BRAINQUEST<br><b>HEROES</b></div><div class="hero-card"><div class="hero-art">🦸‍♂️</div><div class="float-gem">💎</div><div class="float-bot">🤖</div></div><button id="playBtn" class="play-btn">▶</button><div class="home-actions"><button id="mapBtn" class="round-action">🗺️</button><button id="treasureBtn" class="round-action">🏆</button></div></section>
+<section id="mapScreen" class="screen map-screen"><div class="world-title">🌈 HERO WORLDS</div><div id="levelMap" class="level-map"></div></section>
+<section id="gameScreen" class="screen game-screen"><div class="game-hud"><button id="backToMapBtn" class="icon-btn">⬅️</button><div id="levelBadge" class="level-badge">1</div><div id="lifeDots" class="life-dots"></div><button id="restartBtn" class="icon-btn">↻</button></div><div class="play-wrap"><canvas id="gameCanvas" width="1000" height="650"></canvas><div id="tutorial" class="tutorial hidden"><div id="tutorialScene"></div><div class="guide-hand">👆</div></div><div id="feedback" class="feedback"></div></div><div id="tapControls" class="tap-controls"></div></section>
+<section id="rewardScreen" class="screen reward-screen"><div id="rewardStars" class="reward-stars"></div><div id="rewardItem" class="reward-item">🎁</div><div class="reward-actions"><button id="retryBtn" class="round-action">↻</button><button id="nextBtn" class="play-btn small">▶</button><button id="rewardMapBtn" class="round-action">🗺️</button></div></section>
+<section id="treasureScreen" class="screen treasure-screen"><div class="island">🏝️</div><div id="collectionGrid" class="collection-grid"></div><button id="treasureBackBtn" class="round-action">⬅️</button></section>
+<section id="parentGate" class="screen parent-panel"><div class="parent-card"><h1>Parent area</h1><p>Hold both buttons together for 3 seconds.</p><div class="gate-buttons"><button id="gateLeft" class="gate-btn">●</button><button id="gateRight" class="gate-btn">●</button></div><div class="holdbar"><span id="holdProgress"></span></div><button id="gateCancel" class="parent-secondary">Back</button></div></section>
+<section id="parentScreen" class="screen parent-panel"><div class="parent-card wide"><div class="parent-title-row"><h1>Parent dashboard</h1><button id="parentClose" class="parent-secondary">Close</button></div><div id="profilePrompt" class="profile-prompt hidden"><h2>Save progress</h2><form id="profileForm"><label>Nickname<input id="childName" required maxlength="24"></label><label>Age<input id="childAge" required type="number" min="4" max="12"></label><label>Parent email<input id="parentEmail" required type="email"></label><label class="consent"><input id="consent" type="checkbox" required> I consent to saving progress on this device.</label><button class="parent-primary">Save</button></form></div><div id="dashboardContent"><div class="stat-row"><div><strong id="dashLevel">1</strong><span>Level</span></div><div><strong id="dashStars">0</strong><span>Stars</span></div><div><strong id="dashMinutes">0</strong><span>Minutes</span></div></div><div id="skillBars" class="skill-bars"></div><h2>Play settings</h2><div class="setting-row"><label>Session <select id="sessionLimit"><option value="0">Off</option><option value="15">15 min</option><option value="20">20 min</option><option value="30">30 min</option></select></label></div><div class="setting-row"><label><input id="reducedMotion" type="checkbox"> Reduced motion</label><label><input id="calmMode" type="checkbox"> Calm mode</label></div><button id="resetBtn" class="danger">Reset progress</button><p class="privacy-note">Progress stays on this device. No chat, ads, camera, microphone, contacts or location.</p></div></div></section>
+<section id="restScreen" class="screen reward-screen"><div class="rest-icon">🌙</div><div class="rest-row">🧃 🧘 🌳</div><button id="restHomeBtn" class="round-action">🏠</button></section>
+</main><script src="game.js?v=7"></script><script>if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js?v=7').catch(()=>{});</script></body></html>
